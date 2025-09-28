@@ -1,0 +1,68 @@
+{
+  "name": "enhanced-cc-sdd",
+  "version": "1.0.0",
+  "description": "Enhanced cc-sdd with AI role coordination, Frontend-Driven Development, and advanced quality gates. Extends cc-sdd with powerful AI collaboration features.",
+  "keywords": [
+    "cc-sdd",
+    "ai-coordination",
+    "frontend-driven-development",
+    "quality-gates",
+    "claude-code",
+    "spec-driven-development",
+    "ai-collaboration",
+    "fdd"
+  ],
+  "author": "Enhanced by Claude Code",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/enhanced-cc-sdd.git",
+    "directory": "enhanced"
+  },
+
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "enhanced-cc-sdd": "./dist/cli.js",
+    "ecc-sdd": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./ai-coordination": {
+      "import": "./dist/ai-coordination/index.js",
+      "types": "./dist/ai-coordination/index.d.ts"
+    },
+    "./integration": {
+      "import": "./dist/integration/index.js",
+      "types": "./dist/integration/index.d.ts"
+    },
+    "./fdd": {
+      "import": "./dist/fdd/index.js",
+      "types": "./dist/fdd/index.d.ts"
+    }
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest -w",
+    "build": "tsc -p .",
+    "postbuild": "node ./scripts/add-shebang.mjs",
+    "prepare": "npm run build",
+    "dev": "tsc -p . --watch"
+  },
+  "files": [
+    "dist",
+    "templates",
+    "../tools/cc-sdd/templates"
+  ],
+  "dependencies": {
+    "cc-sdd": "^1.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}
